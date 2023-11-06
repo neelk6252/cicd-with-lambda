@@ -1,5 +1,10 @@
 version: 0.2
 phases:
+install:
+    commands:
+      - sudo yum update
+      - sudo yum install zip
+      - echo "Installing dependencies..."
   build:
     commands:
       - echo "This is build phase... Zipping my lambda function"

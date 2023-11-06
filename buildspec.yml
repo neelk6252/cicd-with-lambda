@@ -1,16 +1,15 @@
 version: 0.2
 phases:
-install:
+  install:
     commands:
       - sudo yum update
       - sudo yum install zip
       - echo "Installing dependencies..."
   build:
     commands:
-      - echo "This is build phase... Zipping my lambda function"
-      - zip -r9 deployment_package.zip lambda_function.py
+      - zip -r deployment_package.zip lambda_function.py
   post_build:
     commands:
       - echo "Updating lambda Function..."
-      - aws lambda update-function-code --function-name  cicd-lambda --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name cicd-lambda --zip-file fileb://deployment_package.zip
       - echo "DONE!!"

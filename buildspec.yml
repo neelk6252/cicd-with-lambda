@@ -2,8 +2,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo yum update
-      - sudo yum install zip
+      - sudo yum update -y
+      - sudo yum install zip -y
       - echo "Installing dependencies..."
   build:
     commands:

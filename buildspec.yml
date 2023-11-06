@@ -1,11 +1,5 @@
 version: 0.2
 phases:
-  install:
-    commands:
-      - sudo yum remove awscli
-      - pip3 install awscli --upgrade --user
-      - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t lib
   build:
     commands:
       - zip -r deployment_package.zip lambda_function.py
